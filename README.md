@@ -16,4 +16,4 @@ Block Chain
 Network는 bridge연결로 되어있습니다.
     
 docker-compose -f .\total-node.yml up
-http://localhost:3000"# DE" 
+http://localhost:3000
