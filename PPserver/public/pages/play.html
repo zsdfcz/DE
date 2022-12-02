@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/player.css" />
+    <title>Digital Evidence Mart</title>
+    <script
+      src="https://kit.fontawesome.com/2d323a629b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./play.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img class="circle_pic" src="/image/favicon-16x16.png">
+        <span class="title">사건 영상 - example</span>
+      </div>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </header>
+
+    <!-- Video Player -->
+    <section class="player">
+      <video controls src="../video/video.mp4"></video>
+    </section>
+
+    <!-- 비디오 정보 및 덤분의일 이미지 or 영상 -->
+    <div class="infoAndUpNext">
+      <!-- 비디오 정보 -->
+      <section class="info">
+        <!-- 메타 데이터 내용 -->
+        <div class="metadata">
+          <ul class="hashtags">
+            <li>#인천시</li>ㅣ
+            <li>#연수구</li>
+            <li>#흰색 K5</li>
+          </ul>
+          <div class="titleAndButton">
+            <span class="title clamp"> 
+              인천 연수구 사건 영상
+            </span>
+
+          </div>
+          <span class="views">2022-07-10 14:50:48</span>
+        </div>
+        <!-- 버튼들 정리 -->
+        <ul class="actions">
+          <li>
+            <button>
+              <i class="fas fa-coins"></i><span>구매하기</span>
+            </button>
+          </li>
+          
+          <li>
+            <button>
+              <i class="fas fa-cart-plus"></i><span>장바구니 담기</span>
+            </button>
+          </li>
+          
+        </ul>
+    
+
+      <!-- Up next --> <!--덤분의 일 내용 나오게--> >
+      <section class="upNext">
+        <hr /><hr />
+        <span class="title">영상 분할 이미지</span>
+        <span class="title2">관련 사건 다른 게시글</span>
+
+        <ul>
+          <li class="item">
+            <div class="img"><img src="../image/1.png" alt="" /></div>
+            <div class="itemInfo">
+              <span class="title">
+                게시자 : 익명
+              </span>
+              <span class="name">
+                특이사항 : 사건 발생 시간 -10초부터 목격
+              </span>
+              <span class="name">
+                사건 발생 차량과 거리 : 5m
+              </span>
+            </div>
+          </li>
+          <li class="item">
+            <div class="img"><img src="../image/12.png" alt="" /></div>
+            <div class="itemInfo">
+              <span class="title">
+                게시자 : zsdfcz
+              </span>
+              <span class="name">
+                example
+              </span>
+            </div>
+          </li>
+          <li class="item">
+            <div class="img"><img src="../image/3.png" alt="" /></div>
+            <div class="itemInfo">
+              <span class="title">
+                게시자 : 익명
+              </span>
+              <span class="name">example</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>영상 위변조 검증</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>영상 위변조 검증</h2>
+    <form ref='verifyForm' id='verifyForm'>
+      <label for="title">파일 제목</label>
+      <input type="text" class="form-control" id="vtitle2" placeholder="파일 제목 입력(4-100)" name="vtitle2" maxlength="100"
+        required="required" pattern=".{4,100}">
+      <label for="title">영상 등록 번호</label>
+      <input type="text" class="form-control" id="vnum2" name="vnum2" maxlength="100" required="required">
+      <button type="button" class="btn btn-default" id="btn">검증하기</button>
+    </form>
+  </div>
+
+  <div class="container">
+    <h3></h3>
+    <div id="result">
+
+    </div>
+  </div>
+
+  <script>
+    $("#btn").click(function () {
+      $.ajax({
+        url: '/ver',
+        type: 'POST',
+        data: {
+          vtitle2: $("#vtitle2").val(),
+          vnum2: $("#vnum2").val()
+        },
+        success: function (data) {
+          $("h3").html(data)
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

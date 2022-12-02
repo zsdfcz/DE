@@ -1,0 +1,17 @@
+
+eth.accounts
+miner.start(2)
+miner.stop()
+miner.start(2)
+exirt
+eth.accounts
+eth.coinbase
+eth.accounts[0]
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()

@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  geth:
+    image: ethereum/client-go
+    container_name: geth_container
+    command: --networkid=456 --port=30303 --maxpeers=10 --http --http.addr="0.0.0.0" --http.port=8545 --http.corsdomain="*" --http.api="admin, debug, web3, eth, txpool, personal, ethash, miner, net" --allow-insecure-unlock
+    volumes:
+      - ./geth_data:/root/.ethereum:rw
+    ports:
+      - "30303:30303" 
+      - "30303:30303/udp" 
+      - "8545:8545"
+      - "8551:8551"
+    networks:
+      - in_net 
+  nodejs: 
+    container_name: nodejs
+    build: ./PPserver/.
+    volumes:
+      - ./PPserver:/app
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - in_net
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mysql:8.0.20
+    command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - in_net
+    ports:
+      - 8086:3306
+networks:
+  in_net:
+    driver: bridge

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>증거 제보하기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>증거 제보하기</h2>
+    <form ref='uploadForm' id='uploadForm' action='/uploadtest' method='post' encType="multipart/form-data">
+      <div class="form-group">
+        <label for="title">제목</label>
+        <input type="text" class="form-control" id="title" placeholder="제목 입력(4-100)" name="title" maxlength="100"
+          required="required" pattern=".{4,100}">
+      </div>
+      <div class="form-group">
+        <label for="title">사건 장소</label>
+        <input type="text" class="form-control" id="state" placeholder="장소 입력" name="state" maxlength="100"
+          required="required" pattern=".{4,100}">
+      </div>
+      <div class="form-group">
+        <label for="title">사건 날짜</label>
+        <input type="date" class="form-control" id="date" name="date" maxlength="100" required="required"
+          pattern=".{4,100}">
+      </div>
+      <div class="form-group">
+        <label for="title">사건 시간</label>
+        <input type="time" class="form-control" id="time" name="time" maxlength="100" required="required"
+          pattern=".{4,100}">
+      </div>
+
+      <div class="form-group">
+        <label for="title">파일 선택</label>
+          <input type="file" name="file" />
+      </div>
+
+      <div class="form-group">
+        <label for="content">상세 내용</label>
+        <textarea class="form-control" rows="5" id="content" name="content" placeholder="내용 작성"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="writer">작성자 공개 여부 (체크 시 공개)</label>
+        <input type="checkbox" class="form-control" id="writer" placeholder="작성자(2자-10자)" name="writer">
+      </div>
+      <button type="submit" class="btn btn-default">등록</button>
+    </form>
+  </div>
+</body>
+
+</html>
